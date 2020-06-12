@@ -126,13 +126,6 @@ ENV PATH="${IGNITION_INSTALL_LOCATION}/lib/runtime/jre/bin:${PATH}"
 COPY docker-entrypoint.sh /usr/local/bin/
 COPY accept-gwnetwork.sh /usr/local/bin/
 
-# Unpack common jar if necessary for compatibility with upgrader
-RUN common_jar="lib/core/common/common-${IGNITION_VERSION}.jar"; \
-    common_jar_pack="${common_jar}.pack.gz"; \
-    if [ ! -f "${common_jar}" -a -f "${common_jar_pack}" ]; then \
-      unpack200 "${common_jar_pack}" "${common_jar}"; \
-    fi
-
 # Prepare Execution Settings
 ENTRYPOINT [ "docker-entrypoint.sh" ]
 CMD [ "./ignition-gateway" \

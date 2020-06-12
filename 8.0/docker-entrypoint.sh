@@ -438,7 +438,7 @@ check_for_upgrade() {
     local image_version=$(cat "${IGNITION_INSTALL_LOCATION}/lib/install-info.txt" | grep gateway.version | cut -d = -f 2 )
 
     # Strip "-SNAPSHOT" off...  FOR NIGHTLY BUILDS ONLY
-    if [[ ${BUILD_EDITION} != *"NIGHTLY"* ]]; then
+    if [[ ${BUILD_EDITION} == *"NIGHTLY"* ]]; then
         image_version=$(echo ${image_version} | sed "s/-SNAPSHOT$//")
     fi
 
