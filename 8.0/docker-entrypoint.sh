@@ -321,7 +321,7 @@ register_modules() {
         local module_basename=$(basename "${module}")
         local module_sourcepath=${module}
         local module_destpath="${IGNITION_INSTALL_LOCATION}/user-lib/modules/${module_basename}"
-        local keytool="${IGNITION_INSTALL_LOCATION}/lib/runtime/jre-nix/bin/keytool"
+        local keytool=$(which keytool)
 
         if [ -h "${module_destpath}" ]; then
             echo "Skipping Linked Module: ${module_basename}"

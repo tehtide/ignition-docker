@@ -130,10 +130,10 @@ COPY accept-gwnetwork.sh /usr/local/bin/
 ENTRYPOINT [ "docker-entrypoint.sh" ]
 CMD [ "./ignition-gateway" \
     , "data/ignition.conf" \
-    , "wrapper.syslog.ident=Ignition Gateway" \
-    , "wrapper.pidfile=./Ignition Gateway.pid" \
-    , "wrapper.name=Ignition Gateway" \
+    , "wrapper.syslog.ident=Ignition-Gateway" \
+    , "wrapper.pidfile=./Ignition-Gateway.pid" \
+    , "wrapper.name=Ignition-Gateway" \
     , "wrapper.displayname=Ignition-Gateway" \
-    , "wrapper.statusfile=./Ignition Gateway.status" \
-    , "wrapper.java.statusfile=./Ignition Gateway.java.status" ]  
+    , "wrapper.statusfile=./Ignition-Gateway.status" \
+    , "wrapper.java.statusfile=./Ignition-Gateway.java.status" ]  
 
