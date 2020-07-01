@@ -2,9 +2,6 @@
 set -eo pipefail
 shopt -s nullglob
 
-#Add volume for mapped use
-VOLUME /var/lib/ignition/data
-
 # Local initialization
 INIT_FILE=/usr/local/share/ignition/data/init.properties
 CMD=( "$@" )
