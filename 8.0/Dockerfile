@@ -116,6 +116,9 @@ COPY --chown=${IGNITION_UID}:${IGNITION_GID} --from=downloader /var/log/ignition
 HEALTHCHECK --interval=10s --start-period=60s --timeout=3s \
     CMD curl --max-time 3 -f http://localhost:8088/StatusPing 2>&1 | grep RUNNING
 
+#Add volume for mapped use
+VOLUME /var/lib/ignition/data
+
 # Setup Port Expose
 EXPOSE 8088 8043 8000
 
