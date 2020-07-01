@@ -724,7 +724,8 @@ if [ "$1" = './ignition-gateway' ]; then
         pid="$!"
 
         echo "Waiting for commissioning servlet to become active..."
-        health_check "Commissioning Phase" ${IGNITION_COMMISSIONING_DELAY:=30} "RUNNING"
+        health_check "Commissioning Phase" ${IGNITION_COMMISSIONING_DELAY:=30000} "RUNNING"
+        #health_check "Commissioning Phase" ${IGNITION_COMMISSIONING_DELAY:=30} "RUNNING"
         perform_commissioning "http://localhost:8088/post-step" ${GATEWAY_RESTORE_REQUIRED}
         
         # If not restoring (but module registration required), allow spool-up of base gateway
