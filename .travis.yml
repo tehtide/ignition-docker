@@ -24,7 +24,7 @@ before_script:
 
 script:
   # Run multibuild and override BASE_IMAGE_NAME so that things flow to Docker Hub
-  - travis_wait 30 make ${BUILD_TARGET} BASE_IMAGE_NAME=kcollins/ignition DOCKER_MULTI_ARCH=${DOCKER_MULTI_ARCH}
+  - travis_wait 30 make ${BUILD_TARGET} BASE_IMAGE_NAME=tehtide/ignition DOCKER_MULTI_ARCH=${DOCKER_MULTI_ARCH}
 
 branches:
   only:
