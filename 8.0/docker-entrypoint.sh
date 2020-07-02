@@ -725,8 +725,8 @@ if [ "$1" = './ignition-gateway' ]; then
         rm -rf /var/lib/ignition/data/*.*
         
         #Relink
-        echo "Relinking /var/lib/ignition/data to /data"
-        ln -s /var/lib/ignition/data /data
+        echo "Relinking /data to /var/lib/ignition/data"
+        ln -s /data /var/lib/ignition/data
         
         # Initialize Gateway
         echo "Provisioning will be logged here: ${IGNITION_INSTALL_LOCATION}/logs/provisioning.log"
