@@ -719,7 +719,7 @@ if [ "$1" = './ignition-gateway' ]; then
         fi
         #Populate the /var/lib/ignition/data
         echo "Populating /data from /var/lib/ignition/data"
-        cp -n /var/lib/ignition/data /data
+        cp -nr /var/lib/ignition/data /data
         
         #Relink
         echo "Relinking /var/lib/ignition/data to /data"
