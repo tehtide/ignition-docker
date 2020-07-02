@@ -665,7 +665,6 @@ if [ "$1" = './ignition-gateway' ]; then
             fi
 
             # Provision the init.properties file if we've got the environment variables for it
-            echo 'ben!!!!! Testing here'
             rm -f /var/lib/ignition/data/init.properties
             add_to_init "SystemName" GATEWAY_SYSTEM_NAME
             add_to_init "UseSSL" GATEWAY_USESSL
@@ -718,7 +717,14 @@ if [ "$1" = './ignition-gateway' ]; then
                 popd > /dev/null 2>&1
             fi
         fi
-
+        #Populate the /var/lib/ignition/data
+        echo "Populating /data from /var/lib/ignition/data"
+        cp -n /var/lib/ignition/data /data
+        
+        #Relink
+        echo "Relinking /var/lib/ignition/data to /data"
+        ln -s /var/lib/ignition/data /data
+        
         # Initialize Gateway
         echo "Provisioning will be logged here: ${IGNITION_INSTALL_LOCATION}/logs/provisioning.log"
         "${CMD[@]}" > ${IGNITION_INSTALL_LOCATION}/logs/provisioning.log 2>&1 &

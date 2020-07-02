@@ -10,7 +10,7 @@ ARG IGNITION_VERSION
 ARG BUILD_EDITION
 
 #Add volume for mapped use
-VOLUME /var/lib/ignition
+VOLUME /data
 
 # Install some prerequisite packages
 RUN apt-get update && apt-get install -y wget unzip
