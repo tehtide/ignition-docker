@@ -722,7 +722,7 @@ if [ "$1" = './ignition-gateway' ]; then
         cp -nR /var/lib/ignition/data/* /data
         
         #remove everything in the /var/lib/ignition/data
-        rm -rf /var/lib/ignition/data/*
+        rm -rf /var/lib/ignition/data
         
         #Relink
         echo "Relinking /data to /var/lib/ignition/data"
