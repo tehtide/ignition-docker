@@ -719,10 +719,10 @@ if [ "$1" = './ignition-gateway' ]; then
         fi
         #Populate the /var/lib/ignition/data
         echo "Populating /data from /var/lib/ignition/data"
-        cp -nr /var/lib/ignition/data /data
+        cp -nR /var/lib/ignition/data/* /data
         
         #remove everything in the /var/lib/ignition/data
-        rm -rf /var/lib/ignition/data/*.*
+        rm -rf /var/lib/ignition/data/*
         
         #Relink
         echo "Relinking /data to /var/lib/ignition/data"
