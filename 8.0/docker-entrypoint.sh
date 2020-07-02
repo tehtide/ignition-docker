@@ -665,6 +665,7 @@ if [ "$1" = './ignition-gateway' ]; then
             fi
 
             # Provision the init.properties file if we've got the environment variables for it
+            echo 'ben!!!!! Testing here'
             rm -f /var/lib/ignition/data/init.properties
             add_to_init "SystemName" GATEWAY_SYSTEM_NAME
             add_to_init "UseSSL" GATEWAY_USESSL
